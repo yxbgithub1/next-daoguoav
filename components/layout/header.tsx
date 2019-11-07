@@ -7,15 +7,15 @@ export const Header: React.FunctionComponent<Props> = () => (
     <header>
         <nav>
             <Link href="/">
-                <a>Home</a>
+                <a>首页</a>
             </Link>{' '}
             |{' '}
             <Link href="/about">
-                <a>About</a>
+                <a>关于</a>
             </Link>{' '}
             |{' '}
             <Link href="/news">
-                <a>news</a>
+                <a>新闻</a>
             </Link>
         </nav>
     </header>
