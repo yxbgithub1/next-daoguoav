@@ -1,0 +1,22 @@
+$head-height: 56px;
+$head-background: rgba(51, 51, 51, 1);
+
+#header {
+    height: $head-height;
+    background: $head-background;
+    a {
+        height: $head-height;
+        line-height: $head-height;
+    }
+}
+
+#nav {
+    a {
+        color: #666;
+        padding: 0 10px;
+        &:hover,
+        &:active {
+            color: #fff;
+        }
+    }
+}

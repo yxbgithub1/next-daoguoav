@@ -1,8 +1,9 @@
 import App from 'next/app'
 import { ConfigProvider } from 'antd'
 import zhCN from 'antd/lib/locale/zh_CN'
+import './style.scss'
 
-class MyApp extends App {
+class MainApp extends App {
     render() {
         const { Component, pageProps } = this.props
         return (
@@ -13,4 +14,4 @@ class MyApp extends App {
     }
 }
 
-export default MyApp
+export default MainApp

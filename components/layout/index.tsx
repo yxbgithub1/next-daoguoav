@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
-import { Header, Footer } from './index'
+import { Header, Footer } from '../index'
 import './style.scss'
 
 type Props = {
