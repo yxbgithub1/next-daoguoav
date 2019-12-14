@@ -26,6 +26,7 @@ module.exports = withPlugins([withSass, withCss], {
                 use: 'null-loader',
             })
         }
+
         return config
     },
 })

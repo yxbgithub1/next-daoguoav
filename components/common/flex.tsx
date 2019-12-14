@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.scss'
 import cx from 'classnames'
-import { FlexProps } from './index.d'
+import { FlexProps } from './common'
 import { useKeyOnly, getElementType } from '../../lib'
 
 export const Flex: React.FunctionComponent<FlexProps> = (props: FlexProps) => {

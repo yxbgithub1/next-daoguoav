@@ -1,17 +1,13 @@
 import React from 'react'
 import cx from 'classnames'
 import _ from 'lodash'
-import { Logo, Nav, Flex } from '../index'
+import { Logo, Nav, Container } from '../index'
 import { getElementType } from '../../lib'
 import { HeaderProps } from './index.d'
 import './style.scss'
 
-const defaultProps = {
-    code: '111222',
-}
-
 export class Header extends React.Component<HeaderProps> {
-    static defaultProps: HeaderProps = defaultProps
+    static defaultProps: HeaderProps = {}
 
     render() {
         const { code, ...rest } = this.props
@@ -19,11 +15,11 @@ export class Header extends React.Component<HeaderProps> {
         const ElementType = getElementType(Header, this.props)
         return (
             <ElementType {...rest} id="header" role="header" className={containerClasses}>
-                <Flex className="container flex">
+                <Container className="flex">
                     <Logo />
                     <Nav />
-                </Flex>
-                <div>{code}</div>
+                </Container>
+                {/* <Flex className="container flex"></Flex> */}
             </ElementType>
         )
     }
