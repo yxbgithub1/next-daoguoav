@@ -1,19 +1,43 @@
 import React from 'react'
+import cx from 'classnames'
 import Link from 'next/link'
+import { getElementType } from '../../lib'
+import { NavProps } from './index.d'
 import './style.scss'
 
-interface Props {}
+export class Nav extends React.PureComponent<NavProps> {
+    static defaultProps: NavProps = {
+        as: 'nav',
+        menus: [
+            {
+                text: '首页',
+                path: '/',
+            },
+            {
+                text: '电影',
+                path: '/about',
+            },
+            {
+                text: '图库',
+                path: '/news',
+            },
+        ],
+    }
 
-export const Nav: React.FunctionComponent<Props> = () => (
-    <nav id="nav" role="nav">
-        <Link href="/">
-            <a>首页</a>
-        </Link>
-        <Link href="/about">
-            <a>关于</a>
-        </Link>
-        <Link href="/news">
-            <a>新闻</a>
-        </Link>
-    </nav>
-)
+    render() {
+        const { as, menus, className, children, ...rest } = this.props
+        const classes = cx('nav', className)
+        const ElementType = getElementType(Nav, this.props)
+
+        return (
+            <ElementType as {...rest} id="nav" className={classes}>
+                {menus.map(m => (
+                    <Link href={m.path}>
+                        <a>{m.text}</a>
+                    </Link>
+                ))}
+                <div className="ft-r">{children}</div>
+            </ElementType>
+        )
+    }
+}

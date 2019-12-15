@@ -5,3 +5,17 @@
 .container {
     margin: 0 auto;
 }
+
+#logo {
+    width: 100px;
+}
+
+.search {
+    display: inline-block;
+    .ant-input {
+        border: 0;
+        box-shadow: none;
+        color: rgb(199, 199, 199);
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}

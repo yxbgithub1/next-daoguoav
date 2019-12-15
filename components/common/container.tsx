@@ -1,40 +1,28 @@
 import React, { PureComponent } from 'react'
 import cx from 'classnames'
 import _ from 'lodash'
-import { getElementType } from '../../lib'
+import { useKeyOnly, getElementType } from '../../lib'
 import { ContainerProps } from './common'
 import './style.scss'
 
-const defaultProps = {
-    width: 1200,
-}
 export class Container extends PureComponent<ContainerProps> {
-    static defaultProps: ContainerProps = defaultProps
+    static defaultProps = {
+        width: '1200',
+    }
 
-    computedWidth() {
-        const { width } = this.props
-        /** 纯数字 */
-        if (typeof width !== 'string') {
-            return width + 'px'
-        } else {
-            const resutl = ['%', 'px'].some(s => _.startsWith(width.toString(), s))
-            /** %和px单做单位时 */
-            if (resutl) {
-                return width
-            } else {
-                /** 非法单位 */
-                return defaultProps.width + 'px'
-            }
-        }
+    computedWidth(width: string | number) {
+        return ['%', 'px', 'em', 'vw'].some(s => _.endsWith(width.toString(), s))
+            ? width
+            : _.parseInt(width.toString()) + 'px'
     }
 
     render() {
-        const { children, className } = this.props
+        const { flex, width, children, className, ...rest } = this.props
         const ElementType = getElementType(Container, this.props)
-        const classes = cx('container', className)
-        const styleWidth = this.computedWidth()
+        const classes = cx('container', className, useKeyOnly(flex, 'flex'))
+        const styleWidth = this.computedWidth(width)
         return (
-            <ElementType style={{ width: styleWidth }} className={classes}>
+            <ElementType {...rest} style={{ width: styleWidth }} className={classes}>
                 {children}
             </ElementType>
         )

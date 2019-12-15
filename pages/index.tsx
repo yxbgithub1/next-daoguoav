@@ -5,7 +5,7 @@ const FormItem = Form.Item
 
 export default () => (
     <Layout title="首页">
-        <div style={{ marginTop: 100 }}>
+        <div>
             <Form layout="horizontal">
                 <FormItem label="Input Number" labelCol={{ span: 8 }} wrapperCol={{ span: 8 }}>
                     <InputNumber

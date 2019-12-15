@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import Head from 'next/head'
-import { Header, Footer } from '../index'
+import { Header, Footer, Container } from '../index'
 import './style.scss'
 
 type Props = {
@@ -16,7 +16,9 @@ export const Layout: React.FunctionComponent<Props> = ({ title = '默认文档�
         </Head>
         <Fragment>
             <Header />
-            {children}
+            <div className="main">
+                <Container>{children}</Container>
+            </div>
             <Footer>公共脚部</Footer>
         </Fragment>
     </Fragment>

@@ -1,3 +1,25 @@
+body {
+    background: rgba(244, 244, 244, 1) !important;
+}
+
 .flex {
     display: flex;
+}
+
+.ltr {
+    text-align: left;
+}
+.ctr {
+    text-align: center;
+}
+
+.rtl {
+    text-align: right;
+}
+
+.ft-l {
+    float: left;
+}
+.ft-r {
+    float: right;
 }

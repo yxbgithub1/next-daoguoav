@@ -7,12 +7,12 @@ import { useKeyOnly, getElementType } from '../../lib'
 export const Flex: React.FunctionComponent<FlexProps> = (props: FlexProps) => {
     const { col, children, ...rest } = props
 
-    const baseClasses = cx('flex', useKeyOnly('col', col))
+    const classes = cx('flex', useKeyOnly('col', col))
 
     const ElementType = getElementType(Flex, props)
 
     return (
-        <ElementType {...rest} className={baseClasses}>
+        <ElementType {...rest} className={classes}>
             {children}
         </ElementType>
     )
