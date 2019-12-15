@@ -1,7 +1,7 @@
+$base-font: 12;
 body {
     background: rgba(244, 244, 244, 1) !important;
 }
-
 .flex {
     display: flex;
 }
@@ -12,14 +12,25 @@ body {
 .ctr {
     text-align: center;
 }
-
 .rtl {
     text-align: right;
 }
-
 .ft-l {
     float: left;
 }
 .ft-r {
     float: right;
+}
+
+/* Font Size*/
+@for $i from 0 to 6 {
+    $step: $i * 2;
+    $result: $base-font + $step;
+    .font-#{$result} {
+        font-size: $result + px;
+    }
+}
+
+.pg-b10 {
+    padding-bottom: 10px;
 }

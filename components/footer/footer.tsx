@@ -2,8 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 import { FooterProps } from './index.d'
 import { getElementType } from '../../lib'
-import { Container } from '../index'
-import { Row, Col } from 'antd'
+import { FootNav, Container } from '../index'
 import './style.scss'
 
 export class Footer extends React.PureComponent<FooterProps> {
@@ -18,13 +17,8 @@ export class Footer extends React.PureComponent<FooterProps> {
         return (
             <ElementType {...rest} className={footerClasses}>
                 <Container>
-                    <Row gutter={[16, 16]}>
-                        <Col span={6}>1</Col>
-                        <Col span={6}>2</Col>
-                        <Col span={6}>3</Col>
-                        <Col span={6}>4</Col>
-                    </Row>
-                    <div>版本说明</div>
+                    <FootNav />
+                    <div className="ctr">版本说明</div>
                 </Container>
             </ElementType>
         )
