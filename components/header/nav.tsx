@@ -30,9 +30,9 @@ export class Nav extends React.PureComponent<NavProps> {
         const ElementType = getElementType(Nav, this.props)
 
         return (
-            <ElementType as {...rest} id="nav" className={classes}>
+            <ElementType as={as} {...rest} id="nav" className={classes}>
                 {menus.map(m => (
-                    <Link href={m.path}>
+                    <Link key={m.path} href={m.path}>
                         <a>{m.text}</a>
                     </Link>
                 ))}

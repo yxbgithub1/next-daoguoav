@@ -1,11 +1,24 @@
-import { Layout } from '../components'
-import { Form, InputNumber, DatePicker, Button } from 'antd'
-
+import { Layout, Container } from '../../components'
+import { Form, Carousel, InputNumber, DatePicker, Button } from 'antd'
 const FormItem = Form.Item
 
 export default () => (
     <Layout title="首页">
-        <div>
+        <Carousel autoplay>
+            <div>
+                <h3>1</h3>
+            </div>
+            <div>
+                <h3>2</h3>
+            </div>
+            <div>
+                <h3>3</h3>
+            </div>
+            <div>
+                <h3>4</h3>
+            </div>
+        </Carousel>
+        <Container>
             <Form layout="horizontal">
                 <FormItem label="Input Number" labelCol={{ span: 8 }} wrapperCol={{ span: 8 }}>
                     <InputNumber
@@ -31,6 +44,6 @@ export default () => (
                     </Button>
                 </FormItem>
             </Form>
-        </div>
+        </Container>
     </Layout>
 )

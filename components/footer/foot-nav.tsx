@@ -12,7 +12,7 @@ const FootNavMenu = (props: FootNavMenuProps) => {
                 <Fragment>
                     <dt className="font-16 pg-b10">{title}</dt>
                     {menu.map((link: NavMenuLink) => (
-                        <dd>
+                        <dd key={link.path}>
                             <Link href={link.path}>
                                 <a>{link.text}</a>
                             </Link>
@@ -27,19 +27,19 @@ const FootNavMenu = (props: FootNavMenuProps) => {
 const menu = [
     {
         text: '岛国AV',
-        path: '',
+        path: '1a',
     },
     {
         text: '岛国AV',
-        path: '',
+        path: '2a',
     },
     {
         text: '岛国AV',
-        path: '',
+        path: '3a',
     },
     {
         text: '岛国AV',
-        path: '',
+        path: '4a',
     },
 ]
 
@@ -50,12 +50,12 @@ export class FootNav extends React.PureComponent {
                 <Col span={6}>
                     <FootNavMenu title="友情链接" menu={menu} />
                 </Col>
-                <Col span={6}>
+                {/* <Col span={6}>
                     <FootNavMenu title="友情链接" menu={menu} />
                 </Col>
                 <Col span={6}>
                     <FootNavMenu title="友情链接" menu={menu} />
-                </Col>
+                </Col> */}
             </Row>
         )
     }

@@ -34,3 +34,17 @@ body {
 .pg-b10 {
     padding-bottom: 10px;
 }
+
+.ant-carousel {
+    height: 360px;
+}
+.ant-carousel .slick-slider {
+    text-align: center;
+    height: 100%;
+    background: #ea4c89;
+    overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+    color: #fff;
+}

@@ -1,0 +1,43 @@
+$pagination-item-size: 5px;
+.swipe {
+    position: relative;
+    &-container {
+        width: 100%;
+        height: 300px;
+        & > div {
+            height: inherit;
+        }
+        .swipe-slide {
+            height: 100%;
+            background-color: #ea4c89;
+        }
+    }
+    &-buttons {
+        left: 50%;
+        top: 50%;
+        z-index: 100;
+        position: absolute;
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+    &-pagination {
+        left: 50%;
+        top: 90%;
+        z-index: 100;
+        position: absolute;
+        transform: translate3d(-50%, -50%, 0);
+
+        &-item {
+            margin: 2px;
+            opacity: 0.4;
+            border-radius: 50%;
+            display: inline-block;
+            padding: $pagination-item-size;
+            background-color: #fff;
+            &.active {
+                width: 5px;
+                opacity: 1;
+            }
+        }
+    }
+}
